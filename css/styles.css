@@ -1318,8 +1318,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 240px; /* Logo bounding box + margin space combined */
-  padding: 0 40px; /* Equal spacing on left and right for seamless looping */
+  width: 170px; /* Reduced from 240px */
+  padding: 0 20px; /* Reduced from 40px */
   height: 80px;
   flex-shrink: 0;
   transition: transform var(--transition-normal);
@@ -1327,14 +1327,15 @@ img {
 
 .client-logo-item img {
   max-width: 130px;
-  max-height: 55px;
+  max-height: 65px;
   object-fit: contain;
-  filter: grayscale(1) opacity(0.5);
-  transition: filter var(--transition-normal), opacity var(--transition-normal);
+  filter: none; /* Removed grayscale */
+  opacity: 0.8; /* Subtle transparency */
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
 }
 
 .client-logo-item:hover img {
-  filter: grayscale(0) opacity(1);
+  opacity: 1; /* Full brightness/color on hover */
 }
 
 .client-logo-item:hover {
@@ -1355,14 +1356,15 @@ img {
     padding: 60px 0;
   }
   .client-logo-item {
-    width: 180px;
-    padding: 0 24px;
+    width: 130px; /* Reduced from 180px */
+    padding: 0 12px; /* Reduced from 24px */
     height: 60px;
   }
   .client-logo-item img {
     max-width: 100px;
     max-height: 42px;
-    filter: grayscale(0) opacity(0.85); /* Keep color legible on mobile */
+    filter: none;
+    opacity: 0.85;
   }
 }
 
