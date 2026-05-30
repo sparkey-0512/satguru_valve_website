@@ -617,6 +617,23 @@ img {
   font-weight: 700;
 }
 
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.hero-actions .btn-primary {
+  background-color: var(--color-primary-container);
+}
+
+.hero-actions .btn-primary:hover {
+  background-color: var(--color-secondary);
+  transform: none;
+  box-shadow: none;
+}
+
 .hero-graphic-wrapper {
   display: flex;
   justify-content: flex-end;
