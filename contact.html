@@ -69,8 +69,8 @@
             <a class="nav-link headline-sm" href="about.html">About SVC</a>
             <a
               class="nav-link headline-sm"
-              href="index.html#testimonies-section"
-              >Testimonies</a
+              href="index.html#testimonials-section"
+              >Testimonials</a
             >
             <a class="nav-link headline-sm" href="contact.html">Contact</a>
           </nav>
@@ -571,7 +571,7 @@
         <form id="enquiry-form-element">
           <div class="modal-body">
             <div class="form-group">
-              <label for="enquiry-name">Full Name</label>
+              <label for="enquiry-name">Full Name <span style="color: var(--color-error);">*</span></label>
               <input
                 class="form-control"
                 id="enquiry-name"
@@ -581,7 +581,17 @@
               />
             </div>
             <div class="form-group">
-              <label for="enquiry-email">Email Address</label>
+              <label for="enquiry-company">Company Name <span style="color: var(--color-error);">*</span></label>
+              <input
+                class="form-control"
+                id="enquiry-company"
+                placeholder="Reliance Projects"
+                type="text"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="enquiry-email">Email Address <span style="color: var(--color-error);">*</span></label>
               <input
                 class="form-control"
                 id="enquiry-email"
@@ -591,11 +601,31 @@
               />
             </div>
             <div class="form-group">
-              <label for="enquiry-msg">Message/Specification</label>
+              <label for="enquiry-phone">Phone Number <span style="color: var(--color-error);">*</span></label>
+              <input
+                class="form-control"
+                id="enquiry-phone"
+                placeholder="+91 98765 43210"
+                type="tel"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="enquiry-subject">Inquiry Type <span style="color: var(--color-error);">*</span></label>
+              <select class="form-control" id="enquiry-subject" required style="padding: 14px 16px; background-color: var(--color-surface-dim); border: 1px solid var(--color-outline-variant); width: 100%; border-radius: var(--radius-default); color: var(--color-on-surface); font-size: 15px;">
+                <option value="" disabled selected>Select an inquiry category</option>
+                <option value="Request a Quote">Request a Quote</option>
+                <option value="Bulk Order">Bulk Order / Wholesale Enquiry</option>
+                <option value="Technical Support">Technical Support / Engineering R&amp;D</option>
+                <option value="General Inquiry">General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="enquiry-msg">Message/Valve Specifications <span style="color: var(--color-error);">*</span></label>
               <textarea
                 class="form-control"
                 id="enquiry-msg"
-                placeholder="Tell us about your project or required valve specifications..."
+                placeholder="Describe your valve series, dimensions, pressure rating, or quantity needed..."
                 required
               ></textarea>
             </div>

@@ -1329,7 +1329,7 @@ img {
 /* --------------------------------------------------------------------------
    8b. Trusted Clients Section Styles (Seamless Auto-rotating Logo Marquee)
    -------------------------------------------------------------------------- */
-.testimonies-section {
+.testimonials-section {
   background-color: var(--color-surface);
   border-bottom: none;
   padding: 80px 0;
@@ -1392,7 +1392,7 @@ img {
 }
 
 @media (max-width: 768px) {
-  .testimonies-section {
+  .testimonials-section {
     padding: 60px 0;
   }
   .client-logo-item {
