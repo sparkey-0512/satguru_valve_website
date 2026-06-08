@@ -33,7 +33,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "website@satguruvalve.com", // your verified domain email
       to: "satguruvalve@gmail.com", // your Gmail where you read inquiries
       subject: `New Inquiry from ${name} — ${company || "N/A"}`,
@@ -47,9 +47,14 @@ export default async function handler(req, res) {
       `,
     });
 
+    if (error) {
+      console.error("Resend API error:", error);
+      return res.status(400).json({ error: error.message || "Failed to send email" });
+    }
+
     return res.status(200).json({ success: true });
   } catch (err) {
-    console.error(err);
+    console.error("Unexpected error:", err);
     return res.status(500).json({ error: "Failed to send email" });
   }
 }
