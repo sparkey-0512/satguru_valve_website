@@ -29,6 +29,13 @@
 
     <!-- Custom CSS Stylesheet -->
     <link href="css/about.css?v=42" rel="stylesheet" />
+
+    <!-- Cloudflare Turnstile SDK -->
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
   </head>
   <body>
     <!-- TopNavBar -->
@@ -63,7 +70,11 @@
             <a class="nav-link headline-sm" href="products.html">Products</a>
             <a class="nav-link headline-sm" href="#mission-vision">Vision</a>
             <a class="nav-link headline-sm" href="about.html">About SVC</a>
-            <a class="nav-link headline-sm" href="index.html#testimonials-section">Testimonials</a>
+            <a
+              class="nav-link headline-sm"
+              href="index.html#testimonials-section"
+              >Testimonials</a
+            >
             <a class="nav-link headline-sm" href="contact.html">Contact</a>
           </nav>
           <a
@@ -80,8 +91,12 @@
     <nav class="mobile-nav-dropdown" id="mobile-nav-dropdown">
       <ul class="mobile-dropdown-links">
         <li><a class="mobile-dropdown-link" href="index.html">Home</a></li>
-        <li><a class="mobile-dropdown-link" href="products.html">Products</a></li>
-        <li><a class="mobile-dropdown-link" href="#mission-vision">Vision</a></li>
+        <li>
+          <a class="mobile-dropdown-link" href="products.html">Products</a>
+        </li>
+        <li>
+          <a class="mobile-dropdown-link" href="#mission-vision">Vision</a>
+        </li>
         <li><a class="mobile-dropdown-link" href="about.html">About</a></li>
         <li><a class="mobile-dropdown-link" href="contact.html">Contact</a></li>
         <li style="margin-top: 16px">
@@ -106,7 +121,9 @@
             30 years of precision.<br />Trusted across India.
           </h1>
           <p class="hero-text body-lg">
-            Satguru Valve Corporation (SVC) is a premier manufacturer of high-precision industrial flow control solutions, engineering safety and reliability for critical global sectors.
+            Satguru Valve Corporation (SVC) is a premier manufacturer of
+            high-precision industrial flow control solutions, engineering safety
+            and reliability for critical global sectors.
           </p>
         </div>
       </section>
@@ -122,13 +139,29 @@
               </h2>
               <div class="story-text body-md">
                 <p>
-                  Founded in <strong>1995</strong> in Ahmedabad, Gujarat, Satguru Valve Corporation began with a humble dream: to manufacture top-tier, zero-leakage industrial valves right here in India. Our founder envisioned a local manufacturing unit that would combine precise engineering with honest, hands-on client relationships.
+                  Founded in <strong>1995</strong> in Ahmedabad, Gujarat,
+                  Satguru Valve Corporation began with a humble dream: to
+                  manufacture top-tier, zero-leakage industrial valves right
+                  here in India. Our founder envisioned a local manufacturing
+                  unit that would combine precise engineering with honest,
+                  hands-on client relationships.
                 </p>
                 <p>
-                  Instead of taking a standard corporate approach, we focused heavily on building a skilled team of local artisans and design engineers. In the early days, we worked closely with local factories, refining disc geometries and rubber seal compounds to solve pressure drops in aggressive municipal water channels.
+                  Instead of taking a standard corporate approach, we focused
+                  heavily on building a skilled team of local artisans and
+                  design engineers. In the early days, we worked closely with
+                  local factories, refining disc geometries and rubber seal
+                  compounds to solve pressure drops in aggressive municipal
+                  water channels.
                 </p>
                 <p>
-                  Over the decades, that small workshop grew into a state-of-the-art manufacturing facility. Today, SVC is trusted by India's largest infrastructure leaders. Throughout our growth journey, we have kept our approach human-centric—ensuring that every engineer, partner, and customer receives personal attention and adaptive engineering support.
+                  Over the decades, that small workshop grew into a
+                  state-of-the-art manufacturing facility. Today, SVC is trusted
+                  by India's largest infrastructure leaders. Throughout our
+                  growth journey, we have kept our approach
+                  human-centric—ensuring that every engineer, partner, and
+                  customer receives personal attention and adaptive engineering
+                  support.
                 </p>
               </div>
             </div>
@@ -146,30 +179,77 @@
                 </div>
               </div>
               <div class="gallery-thumbnails-wrapper">
-                <button class="gallery-scroll-btn prev" type="button" aria-label="Scroll left">
+                <button
+                  class="gallery-scroll-btn prev"
+                  type="button"
+                  aria-label="Scroll left"
+                >
                   <span class="material-symbols-outlined">chevron_left</span>
                 </button>
                 <div class="gallery-thumbnails">
-                  <div class="thumbnail-item active" data-src="images/factory-skovby.png" data-caption="SVC Sprawling Factory Unit (Established 1995)">
-                    <img src="images/factory-skovby.png" alt="Ahmedabad Manufacturing Unit" />
+                  <div
+                    class="thumbnail-item active"
+                    data-src="images/factory-skovby.png"
+                    data-caption="SVC Sprawling Factory Unit (Established 1995)"
+                  >
+                    <img
+                      src="images/factory-skovby.png"
+                      alt="Ahmedabad Manufacturing Unit"
+                    />
                   </div>
-                  <div class="thumbnail-item" data-src="images/logistics-hub.png" data-caption="SVC High-Capacity Logistics Hub">
+                  <div
+                    class="thumbnail-item"
+                    data-src="images/logistics-hub.png"
+                    data-caption="SVC High-Capacity Logistics Hub"
+                  >
                     <img src="images/logistics-hub.png" alt="Logistics Hub" />
                   </div>
-                  <div class="thumbnail-item" data-src="images/installed butterfly valve.jpg" data-caption="Precision-Engineered Valve Installation">
-                    <img src="images/installed butterfly valve.jpg" alt="Butterfly Valve Installation" />
+                  <div
+                    class="thumbnail-item"
+                    data-src="images/installed butterfly valve.jpg"
+                    data-caption="Precision-Engineered Valve Installation"
+                  >
+                    <img
+                      src="images/installed butterfly valve.jpg"
+                      alt="Butterfly Valve Installation"
+                    />
                   </div>
-                  <div class="thumbnail-item" data-src="images/heavy_manufacturing.jpeg" data-caption="Heavy Valve Manufacturing & Lathe Engineering">
-                    <img src="images/heavy_manufacturing.jpeg" alt="Heavy Manufacturing Process" />
+                  <div
+                    class="thumbnail-item"
+                    data-src="images/heavy_manufacturing.jpeg"
+                    data-caption="Heavy Valve Manufacturing & Lathe Engineering"
+                  >
+                    <img
+                      src="images/heavy_manufacturing.jpeg"
+                      alt="Heavy Manufacturing Process"
+                    />
                   </div>
-                  <div class="thumbnail-item" data-src="images/Wafer Design Butterfly Valves.jpg" data-caption="Series 100 Wafer Design Butterfly Valves">
-                    <img src="images/Wafer Design Butterfly Valves.jpg" alt="Wafer Design Butterfly Valves" />
+                  <div
+                    class="thumbnail-item"
+                    data-src="images/Wafer Design Butterfly Valves.jpg"
+                    data-caption="Series 100 Wafer Design Butterfly Valves"
+                  >
+                    <img
+                      src="images/Wafer Design Butterfly Valves.jpg"
+                      alt="Wafer Design Butterfly Valves"
+                    />
                   </div>
-                  <div class="thumbnail-item" data-src="images/oil_gas.jpg" data-caption="SVC Valves Serving Critical Oil & Gas Refineries">
-                    <img src="images/oil_gas.jpg" alt="Oil & Gas Refinery Site" />
+                  <div
+                    class="thumbnail-item"
+                    data-src="images/oil_gas.jpg"
+                    data-caption="SVC Valves Serving Critical Oil & Gas Refineries"
+                  >
+                    <img
+                      src="images/oil_gas.jpg"
+                      alt="Oil & Gas Refinery Site"
+                    />
                   </div>
                 </div>
-                <button class="gallery-scroll-btn next" type="button" aria-label="Scroll right">
+                <button
+                  class="gallery-scroll-btn next"
+                  type="button"
+                  aria-label="Scroll right"
+                >
                   <span class="material-symbols-outlined">chevron_right</span>
                 </button>
               </div>
@@ -191,9 +271,16 @@
             <div class="product-card">
               <div class="product-content">
                 <span class="product-card-tag label-caps">Our Mission</span>
-                <h3 class="product-card-title headline-sm">Absolute Safety & Reliability</h3>
+                <h3 class="product-card-title headline-sm">
+                  Absolute Safety & Reliability
+                </h3>
                 <p class="product-card-desc body-md">
-                  To design, manufacture, and supply high-precision, bubble-tight industrial valves that ensure absolute system safety and zero fluid loss. We strive to empower critical industries with robust, long-lasting flow control components, engineered locally and manufactured to global quality standards.
+                  To design, manufacture, and supply high-precision,
+                  bubble-tight industrial valves that ensure absolute system
+                  safety and zero fluid loss. We strive to empower critical
+                  industries with robust, long-lasting flow control components,
+                  engineered locally and manufactured to global quality
+                  standards.
                 </p>
               </div>
             </div>
@@ -202,9 +289,16 @@
             <div class="product-card">
               <div class="product-content">
                 <span class="product-card-tag label-caps">Our Vision</span>
-                <h3 class="product-card-title headline-sm">Global Engineering Benchmark</h3>
+                <h3 class="product-card-title headline-sm">
+                  Global Engineering Benchmark
+                </h3>
                 <p class="product-card-desc body-md">
-                  To stand as the global benchmark for fluid regulation technology. We aim to expand our engineering horizons into complex metallurgy—such as high-alloy duplex steels—and advance sustainable manufacturing processes that protect environment resources while powering national infrastructure development.
+                  To stand as the global benchmark for fluid regulation
+                  technology. We aim to expand our engineering horizons into
+                  complex metallurgy—such as high-alloy duplex steels—and
+                  advance sustainable manufacturing processes that protect
+                  environment resources while powering national infrastructure
+                  development.
                 </p>
               </div>
             </div>
@@ -216,51 +310,93 @@
       <section class="section expectations-section" id="why-choose-us">
         <div class="container">
           <div class="section-header-left">
-            <span class="section-tag-left label-caps">WHY PARTNER WITH SVC</span>
+            <span class="section-tag-left label-caps"
+              >WHY PARTNER WITH SVC</span
+            >
             <h2 class="section-title-left headline-lg">Key Differentiators</h2>
           </div>
 
           <div class="about-philosophy-grid">
             <!-- Pillar 1: 30+ Years -->
             <div class="philosophy-item">
-              <span class="material-symbols-outlined" style="font-size: 36px; color: var(--color-primary); flex-shrink: 0;">history</span>
+              <span
+                class="material-symbols-outlined"
+                style="
+                  font-size: 36px;
+                  color: var(--color-primary);
+                  flex-shrink: 0;
+                "
+                >history</span
+              >
               <div class="philosophy-content-wrap">
                 <h4>30+ Years of Engineering Expertise</h4>
                 <p>
-                  Over three decades of concentrated focus on high-precision valves translates to unparalleled design knowledge in regulating flow rate, velocity, and pressures.
+                  Over three decades of concentrated focus on high-precision
+                  valves translates to unparalleled design knowledge in
+                  regulating flow rate, velocity, and pressures.
                 </p>
               </div>
             </div>
 
             <!-- Pillar 2: Critical Sectors -->
             <div class="philosophy-item">
-              <span class="material-symbols-outlined" style="font-size: 36px; color: var(--color-primary); flex-shrink: 0;">domain</span>
+              <span
+                class="material-symbols-outlined"
+                style="
+                  font-size: 36px;
+                  color: var(--color-primary);
+                  flex-shrink: 0;
+                "
+                >domain</span
+              >
               <div class="philosophy-content-wrap">
                 <h4>Critical Sectors Served</h4>
                 <p>
-                  We design valves specifically built to withstand extreme municipal water works, petrochemical refineries, chemical processors, power plants, and fire networks.
+                  We design valves specifically built to withstand extreme
+                  municipal water works, petrochemical refineries, chemical
+                  processors, power plants, and fire networks.
                 </p>
               </div>
             </div>
 
             <!-- Pillar 3: Quality standards -->
             <div class="philosophy-item">
-              <span class="material-symbols-outlined" style="font-size: 36px; color: var(--color-primary); flex-shrink: 0;">verified</span>
+              <span
+                class="material-symbols-outlined"
+                style="
+                  font-size: 36px;
+                  color: var(--color-primary);
+                  flex-shrink: 0;
+                "
+                >verified</span
+              >
               <div class="philosophy-content-wrap">
                 <h4>Rigorous Quality Control</h4>
                 <p>
-                  Our manufacturing units run stringent physical pressure and hydro-testing on every single valve before delivery, ensuring absolute field safety.
+                  Our manufacturing units run stringent physical pressure and
+                  hydro-testing on every single valve before delivery, ensuring
+                  absolute field safety.
                 </p>
               </div>
             </div>
 
             <!-- Pillar 4: Made in India -->
             <div class="philosophy-item">
-              <span class="material-symbols-outlined" style="font-size: 36px; color: var(--color-primary); flex-shrink: 0;">precision_manufacturing</span>
+              <span
+                class="material-symbols-outlined"
+                style="
+                  font-size: 36px;
+                  color: var(--color-primary);
+                  flex-shrink: 0;
+                "
+                >precision_manufacturing</span
+              >
               <div class="philosophy-content-wrap">
                 <h4>Made In India Local Expertise</h4>
                 <p>
-                  Our products are proudly manufactured in Ahmedabad, Gujarat, combining competitive local cost structures with highly adaptive, responsive support.
+                  Our products are proudly manufactured in Ahmedabad, Gujarat,
+                  combining competitive local cost structures with highly
+                  adaptive, responsive support.
                 </p>
               </div>
             </div>
@@ -384,10 +520,18 @@
           <div class="footer-links-col">
             <h4 class="footer-col-title">Explore</h4>
             <ul class="footer-links-list">
-              <li class="footer-link-item"><a href="products.html">Products</a></li>
-              <li class="footer-link-item"><a href="index.html#expectations-section">Vision</a></li>
-              <li class="footer-link-item"><a href="about.html">About SVC</a></li>
-              <li class="footer-link-item"><a href="contact.html">Contact</a></li>
+              <li class="footer-link-item">
+                <a href="products.html">Products</a>
+              </li>
+              <li class="footer-link-item">
+                <a href="index.html#expectations-section">Vision</a>
+              </li>
+              <li class="footer-link-item">
+                <a href="about.html">About SVC</a>
+              </li>
+              <li class="footer-link-item">
+                <a href="contact.html">Contact</a>
+              </li>
             </ul>
           </div>
           <!-- Follow Us Column -->
@@ -423,9 +567,16 @@
           <!-- Google Map Column -->
           <div class="footer-links-col footer-map-col">
             <h4 class="footer-col-title">
-              <a href="https://share.google/0ch1PiINm4OmAy9On" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
+              <a
+                href="https://share.google/0ch1PiINm4OmAy9On"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="display: inline-flex; align-items: center; gap: 4px"
+              >
                 Visit Us
-                <span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
+                <span class="material-symbols-outlined" style="font-size: 16px"
+                  >open_in_new</span
+                >
               </a>
             </h4>
             <div class="footer-map-wrapper">
@@ -439,7 +590,19 @@
                 referrerpolicy="no-referrer-when-downgrade"
                 title="SVC Factory Map"
               ></iframe>
-              <a href="https://share.google/0ch1PiINm4OmAy9On" target="_blank" rel="noopener noreferrer" style="display: block; margin-top: 8px; font-size: 13px; color: var(--color-secondary-fixed-dim); text-decoration: underline; transition: color var(--transition-fast);">
+              <a
+                href="https://share.google/0ch1PiINm4OmAy9On"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  display: block;
+                  margin-top: 8px;
+                  font-size: 13px;
+                  color: var(--color-secondary-fixed-dim);
+                  text-decoration: underline;
+                  transition: color var(--transition-fast);
+                "
+              >
                 Open in Google Maps
               </a>
             </div>
@@ -471,7 +634,10 @@
         <form id="enquiry-form-element">
           <div class="modal-body">
             <div class="form-group">
-              <label for="enquiry-name">Full Name <span style="color: var(--color-error);">*</span></label>
+              <label for="enquiry-name"
+                >Full Name
+                <span style="color: var(--color-error)">*</span></label
+              >
               <input
                 class="form-control"
                 id="enquiry-name"
@@ -481,7 +647,10 @@
               />
             </div>
             <div class="form-group">
-              <label for="enquiry-company">Company Name <span style="color: var(--color-error);">*</span></label>
+              <label for="enquiry-company"
+                >Company Name
+                <span style="color: var(--color-error)">*</span></label
+              >
               <input
                 class="form-control"
                 id="enquiry-company"
@@ -491,7 +660,10 @@
               />
             </div>
             <div class="form-group">
-              <label for="enquiry-email">Email Address <span style="color: var(--color-error);">*</span></label>
+              <label for="enquiry-email"
+                >Email Address
+                <span style="color: var(--color-error)">*</span></label
+              >
               <input
                 class="form-control"
                 id="enquiry-email"
@@ -501,7 +673,10 @@
               />
             </div>
             <div class="form-group">
-              <label for="enquiry-phone">Phone Number <span style="color: var(--color-error);">*</span></label>
+              <label for="enquiry-phone"
+                >Phone Number
+                <span style="color: var(--color-error)">*</span></label
+              >
               <input
                 class="form-control"
                 id="enquiry-phone"
@@ -511,23 +686,56 @@
               />
             </div>
             <div class="form-group">
-              <label for="enquiry-subject">Inquiry Type <span style="color: var(--color-error);">*</span></label>
-              <select class="form-control" id="enquiry-subject" required style="padding: 14px 16px; background-color: var(--color-surface-dim); border: 1px solid var(--color-outline-variant); width: 100%; border-radius: var(--radius-default); color: var(--color-on-surface); font-size: 15px;">
-                <option value="" disabled selected>Select an inquiry category</option>
+              <label for="enquiry-subject"
+                >Inquiry Type
+                <span style="color: var(--color-error)">*</span></label
+              >
+              <select
+                class="form-control"
+                id="enquiry-subject"
+                required
+                style="
+                  padding: 14px 16px;
+                  background-color: var(--color-surface-dim);
+                  border: 1px solid var(--color-outline-variant);
+                  width: 100%;
+                  border-radius: var(--radius-default);
+                  color: var(--color-on-surface);
+                  font-size: 15px;
+                "
+              >
+                <option value="" disabled selected>
+                  Select an inquiry category
+                </option>
                 <option value="Request a Quote">Request a Quote</option>
-                <option value="Bulk Order">Bulk Order / Wholesale Enquiry</option>
-                <option value="Technical Support">Technical Support / Engineering R&amp;D</option>
+                <option value="Bulk Order">
+                  Bulk Order / Wholesale Enquiry
+                </option>
+                <option value="Technical Support">
+                  Technical Support / Engineering R&amp;D
+                </option>
                 <option value="General Inquiry">General Inquiry</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="enquiry-msg">Message/Valve Specifications <span style="color: var(--color-error);">*</span></label>
+              <label for="enquiry-msg"
+                >Message/Valve Specifications
+                <span style="color: var(--color-error)">*</span></label
+              >
               <textarea
                 class="form-control"
                 id="enquiry-msg"
                 placeholder="Describe your valve series, dimensions, pressure rating, or quantity needed..."
                 required
               ></textarea>
+            </div>
+            <!-- Cloudflare Turnstile Bot Check -->
+            <div class="form-group" style="margin-top: 16px">
+              <div
+                class="cf-turnstile"
+                data-sitekey="0x4AAAAAADgxkgyOsczDwSxN"
+                data-theme="light"
+              ></div>
             </div>
           </div>
           <div class="modal-footer">
@@ -543,6 +751,6 @@
     </div>
 
     <!-- Main JavaScript File -->
-    <script src="js/about.js?v=3"></script>
+    <script src="js/about.js?v=4"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 /**
- * AVR International A/S (Satguru Valve Website) - Products Page Interactive Logic
+ * Satguru Valve Corporation (Satguru Valve Website) - Products Page Interactive Logic
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -103,11 +103,71 @@ document.addEventListener("DOMContentLoaded", () => {
   if (enquiryForm) {
     enquiryForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      alert(
-        "Thank you for your enquiry. Our team will get back to you shortly.",
-      );
-      closeModal();
-      enquiryForm.reset();
+
+      const name = document.getElementById("enquiry-name").value.trim();
+      const company = document.getElementById("enquiry-company").value.trim();
+      const email = document.getElementById("enquiry-email").value.trim();
+      const phone = document.getElementById("enquiry-phone").value.trim();
+      const subject = document.getElementById("enquiry-subject").value;
+      const messageText = document.getElementById("enquiry-msg").value.trim();
+
+      // Retrieve Turnstile token
+      const turnstileResponse = enquiryForm.querySelector("[name='cf-turnstile-response']");
+      const turnstileToken = turnstileResponse ? turnstileResponse.value : "";
+
+      if (!name || !email || !messageText) {
+        alert("Name, email, and message are required.");
+        return;
+      }
+
+      if (!turnstileToken) {
+        alert("Please complete the bot verification check.");
+        return;
+      }
+
+      const submitBtn = enquiryForm.querySelector("button[type='submit']");
+      if (submitBtn) submitBtn.disabled = true;
+
+      fetch("/api/enquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          company,
+          phone,
+          email,
+          message: `[Inquiry Type: ${subject}]\n\n${messageText}`,
+          turnstileToken,
+        }),
+      })
+        .then((response) => response.json().then((data) => ({ status: response.status, data })))
+        .then(({ status, data }) => {
+          if (status === 200 && data.success) {
+            alert("Thank you for your enquiry. Our team will get back to you shortly.");
+            closeModal();
+            enquiryForm.reset();
+            if (typeof turnstile !== "undefined") {
+              turnstile.reset(enquiryForm);
+            }
+          } else {
+            alert(`Failed to send enquiry: ${data.error || "Please try again."}`);
+            if (typeof turnstile !== "undefined") {
+              turnstile.reset(enquiryForm);
+            }
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+          alert("An error occurred. Please try again later.");
+          if (typeof turnstile !== "undefined") {
+            turnstile.reset(enquiryForm);
+          }
+        })
+        .finally(() => {
+          if (submitBtn) submitBtn.disabled = false;
+        });
     });
   }
 
@@ -122,10 +182,34 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = emailInput.value.trim();
 
       if (email) {
-        alert(
-          `Success! "${email}" has been successfully subscribed to SVC newsletter updates.`,
-        );
-        emailInput.value = "";
+        const submitBtn = newsletterForm.querySelector("button[type='submit']");
+        if (submitBtn) submitBtn.disabled = true;
+        emailInput.disabled = true;
+
+        fetch("/api/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        })
+          .then((response) => response.json().then((data) => ({ status: response.status, data })))
+          .then(({ status, data }) => {
+            if (status === 200 && data.success) {
+              alert(`Success! "${email}" has been successfully subscribed to SVC newsletter updates.`);
+              emailInput.value = "";
+            } else {
+              alert(`Subscription failed: ${data.error || "Please try again."}`);
+            }
+          })
+          .catch((err) => {
+            console.error(err);
+            alert("An error occurred. Please try again later.");
+          })
+          .finally(() => {
+            if (submitBtn) submitBtn.disabled = false;
+            emailInput.disabled = false;
+          });
       }
     });
   }

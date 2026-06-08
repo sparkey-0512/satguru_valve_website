@@ -29,6 +29,13 @@
 
     <!-- Custom CSS Stylesheet -->
     <link href="css/products.css?v=43" rel="stylesheet" />
+
+    <!-- Cloudflare Turnstile SDK -->
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
   </head>
   <body>
     <!-- TopNavBar -->
@@ -547,6 +554,14 @@
                 required
               ></textarea>
             </div>
+            <!-- Cloudflare Turnstile Bot Check -->
+            <div class="form-group" style="margin-top: 16px">
+              <div
+                class="cf-turnstile"
+                data-sitekey="0x4AAAAAADgxkgyOsczDwSxN"
+                data-theme="light"
+              ></div>
+            </div>
           </div>
           <div class="modal-footer">
             <button class="btn btn-secondary modal-close-btn" type="button">
@@ -561,6 +576,6 @@
     </div>
 
     <!-- Main JavaScript File -->
-    <script src="js/products.js?v=3"></script>
+    <script src="js/products.js?v=4"></script>
   </body>
 </html>

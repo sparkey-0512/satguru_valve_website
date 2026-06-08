@@ -29,6 +29,13 @@
 
     <!-- Custom CSS Stylesheet -->
     <link href="css/contact.css?v=1" rel="stylesheet" />
+
+    <!-- Cloudflare Turnstile SDK -->
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
   </head>
   <body>
     <!-- TopNavBar -->
@@ -346,6 +353,18 @@
                   ></textarea>
                 </div>
 
+                <!-- Cloudflare Turnstile Bot Check -->
+                <div
+                  class="form-group"
+                  style="margin-top: 16px; margin-bottom: 20px"
+                >
+                  <div
+                    class="cf-turnstile"
+                    data-sitekey="0x4AAAAAADgxkgyOsczDwSxN"
+                    data-theme="light"
+                  ></div>
+                </div>
+
                 <!-- Submit Button -->
                 <div>
                   <button class="btn form-submit-btn" type="submit">
@@ -571,7 +590,10 @@
         <form id="enquiry-form-element">
           <div class="modal-body">
             <div class="form-group">
-              <label for="enquiry-name">Full Name <span style="color: var(--color-error);">*</span></label>
+              <label for="enquiry-name"
+                >Full Name
+                <span style="color: var(--color-error)">*</span></label
+              >
               <input
                 class="form-control"
                 id="enquiry-name"
@@ -581,7 +603,10 @@
               />
             </div>
             <div class="form-group">
-              <label for="enquiry-company">Company Name <span style="color: var(--color-error);">*</span></label>
+              <label for="enquiry-company"
+                >Company Name
+                <span style="color: var(--color-error)">*</span></label
+              >
               <input
                 class="form-control"
                 id="enquiry-company"
@@ -591,7 +616,10 @@
               />
             </div>
             <div class="form-group">
-              <label for="enquiry-email">Email Address <span style="color: var(--color-error);">*</span></label>
+              <label for="enquiry-email"
+                >Email Address
+                <span style="color: var(--color-error)">*</span></label
+              >
               <input
                 class="form-control"
                 id="enquiry-email"
@@ -601,7 +629,10 @@
               />
             </div>
             <div class="form-group">
-              <label for="enquiry-phone">Phone Number <span style="color: var(--color-error);">*</span></label>
+              <label for="enquiry-phone"
+                >Phone Number
+                <span style="color: var(--color-error)">*</span></label
+              >
               <input
                 class="form-control"
                 id="enquiry-phone"
@@ -611,23 +642,56 @@
               />
             </div>
             <div class="form-group">
-              <label for="enquiry-subject">Inquiry Type <span style="color: var(--color-error);">*</span></label>
-              <select class="form-control" id="enquiry-subject" required style="padding: 14px 16px; background-color: var(--color-surface-dim); border: 1px solid var(--color-outline-variant); width: 100%; border-radius: var(--radius-default); color: var(--color-on-surface); font-size: 15px;">
-                <option value="" disabled selected>Select an inquiry category</option>
+              <label for="enquiry-subject"
+                >Inquiry Type
+                <span style="color: var(--color-error)">*</span></label
+              >
+              <select
+                class="form-control"
+                id="enquiry-subject"
+                required
+                style="
+                  padding: 14px 16px;
+                  background-color: var(--color-surface-dim);
+                  border: 1px solid var(--color-outline-variant);
+                  width: 100%;
+                  border-radius: var(--radius-default);
+                  color: var(--color-on-surface);
+                  font-size: 15px;
+                "
+              >
+                <option value="" disabled selected>
+                  Select an inquiry category
+                </option>
                 <option value="Request a Quote">Request a Quote</option>
-                <option value="Bulk Order">Bulk Order / Wholesale Enquiry</option>
-                <option value="Technical Support">Technical Support / Engineering R&amp;D</option>
+                <option value="Bulk Order">
+                  Bulk Order / Wholesale Enquiry
+                </option>
+                <option value="Technical Support">
+                  Technical Support / Engineering R&amp;D
+                </option>
                 <option value="General Inquiry">General Inquiry</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="enquiry-msg">Message/Valve Specifications <span style="color: var(--color-error);">*</span></label>
+              <label for="enquiry-msg"
+                >Message/Valve Specifications
+                <span style="color: var(--color-error)">*</span></label
+              >
               <textarea
                 class="form-control"
                 id="enquiry-msg"
                 placeholder="Describe your valve series, dimensions, pressure rating, or quantity needed..."
                 required
               ></textarea>
+            </div>
+            <!-- Cloudflare Turnstile Bot Check -->
+            <div class="form-group" style="margin-top: 16px">
+              <div
+                class="cf-turnstile"
+                data-sitekey="0x4AAAAAADgxkgyOsczDwSxN"
+                data-theme="light"
+              ></div>
             </div>
           </div>
           <div class="modal-footer">
@@ -643,6 +707,6 @@
     </div>
 
     <!-- Main JavaScript File -->
-    <script src="js/contact.js?v=1"></script>
+    <script src="js/contact.js?v=4"></script>
   </body>
 </html>
