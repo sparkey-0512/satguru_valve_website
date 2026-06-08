@@ -2387,7 +2387,8 @@ textarea.form-control {
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 4px 0;
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   scrollbar-width: none; /* Firefox */
 }
 
