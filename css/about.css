@@ -2332,6 +2332,7 @@ textarea.form-control {
   width: 100%;
   max-width: 440px;
   margin: 0 auto;
+  min-width: 0; /* Prevents grid item from expanding beyond layout */
 }
 
 @media (max-width: 768px) {
@@ -2379,6 +2380,8 @@ textarea.form-control {
   gap: 8px;
   position: relative;
   width: 100%;
+  max-width: 100%; /* Ensure it does not exceed gallery container width */
+  overflow: hidden; /* Force clipping of any horizontal visual overflow */
 }
 
 .gallery-thumbnails {
